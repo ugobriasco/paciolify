@@ -4,22 +4,24 @@ chai.use(chaiHttp);
 const should = chai.should();
 
 // System under test
-const server = require("../../lib/server");
+const app = require("../../index.js");
 
 const HOST = "http://localhost:3000";
 
-// TODO: spin up and down the server
-// before(done => {
-//   server.start();
-//   server.on("server-started", function() {
-//     done();
-//   });
-// });
-//
-// after(done => server.stop(err => done()));
+let serverInstance;
+
+before(done => {
+  serverInstance = app.start();
+  done();
+});
+
+after(done => {
+  serverInstance = app.stop();
+  done();
+});
 
 describe("/status", () => {
-  it("shall return a 200 by getting its /status", done => {
+  it("GET shall return a 200", done => {
     chai
       .request(HOST)
       .get(`/status`)
