@@ -31,3 +31,29 @@ describe("/status", () => {
       });
   });
 });
+
+describe("/user", () => {
+  it("GET shall return a 200 and a list of users", done => {
+    chai
+      .request(HOST)
+      .get(`/user`)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a("array");
+        done();
+      });
+  });
+});
+
+describe("/user/id/:UID", () => {
+  it("GET shall return a 200 and a user", done => {
+    chai
+      .request(HOST)
+      .get(`/user/id/5d2cee95cdb0ec76f9b64f22`)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a("object");
+        done();
+      });
+  });
+});
