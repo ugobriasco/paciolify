@@ -5,7 +5,6 @@ const should = chai.should();
 
 // System under test
 const app = require("../../index.js");
-
 const HOST = "http://localhost:3000";
 
 let serverInstance;
@@ -18,6 +17,18 @@ before(done => {
 after(done => {
   serverInstance = app.stop();
   done();
+});
+
+describe("/404", () => {
+  it("GET a unmapped route shall return a 404", done => {
+    chai
+      .request(HOST)
+      .get(`/fooBar`)
+      .end((err, res) => {
+        res.should.have.status(404);
+        done();
+      });
+  });
 });
 
 describe("/status", () => {
@@ -45,15 +56,4 @@ describe("/user", () => {
   });
 });
 
-describe("/user/id/:UID", () => {
-  it("GET shall return a 200 and a user", done => {
-    chai
-      .request(HOST)
-      .get(`/user/id/5d2cee95cdb0ec76f9b64f22`)
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a("object");
-        done();
-      });
-  });
-});
+4;
