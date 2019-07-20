@@ -56,4 +56,60 @@ describe("/user", () => {
   });
 });
 
-4;
+describe("/login", () => {
+  it("POST shall return a 200 if valid authentication", done => {
+    chai
+      .request(HOST)
+      .post(`/login`)
+      .send({ email: "foo", password: "foo" })
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a("object");
+        done();
+      });
+  });
+  it("POST shall return a 401 if invalid authentication", done => {
+    chai
+      .request(HOST)
+      .post(`/login`)
+      .send({ email: "foo", password: "Bla" })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.be.a("object");
+        done();
+      });
+  });
+  it("POST shall return a 401 if user not found", done => {
+    chai
+      .request(HOST)
+      .post(`/login`)
+      .send({ email: "Bla", password: "foo" })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.be.a("object");
+        done();
+      });
+  });
+  it("POST shall return a 400 if no email is presented", done => {
+    chai
+      .request(HOST)
+      .post(`/login`)
+      .send({ username: "foo", password: "foo" })
+      .end((err, res) => {
+        res.should.have.status(400);
+        res.body.should.be.a("object");
+        done();
+      });
+  });
+  it("POST shall return a 400 if no password is presented", done => {
+    chai
+      .request(HOST)
+      .post(`/login`)
+      .send({ email: "foo", avocado: true })
+      .end((err, res) => {
+        res.should.have.status(400);
+        res.body.should.be.a("object");
+        done();
+      });
+  });
+});
