@@ -34,6 +34,18 @@ Start the application:
 npm start
 ```
 
+There are several other ways to start the application, here some of them:
+
+```
+# Start the application, setting the environment parameter (default stage)
+NODE_ENV=production node .
+NODE_ENV=stage node .
+
+# Start the application with debugging options set
+NODE_DEBUG=server NODE_ENV=stage node .
+
+```
+
 ## Usage
 
 ### Banks supported
