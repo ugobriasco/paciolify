@@ -4,11 +4,15 @@
 
 // External Dependancies
 const server = require("./lib/server");
+const workers = require("./lib/workers");
 
 const app = {
   start: () => {
     // start the server
     server.start();
+
+    //start workers
+    workers.start();
   },
   stop: () => {
     server.stop();
