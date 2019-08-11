@@ -41,9 +41,11 @@ There are several other ways to start the application, here some of them:
 NODE_ENV=production node .
 NODE_ENV=stage node .
 
-# Start the application with debugging options set
+# Start the application with debugging server
 NODE_DEBUG=server NODE_ENV=stage node .
 
+# Start the application with debugging workers
+NODE_DEBUG=workers NODE_ENV=stage node .
 ```
 
 ## Usage
