@@ -46,6 +46,9 @@ NODE_DEBUG=server NODE_ENV=stage node .
 
 # Start the application with debugging workers
 NODE_DEBUG=workers NODE_ENV=stage node .
+
+
+api-n26
 ```
 
 ## Usage
@@ -62,6 +65,21 @@ Run `npm test` to execute the unit and integration tests. It requires the follow
 - [Chai](http://chaijs.com).
 
 You can also run unit tests (`npm run test:unit`) or integration tests (`npm run test:integration`) separately
+
+## Debugging
+
+Here an example for triggering debugging:
+
+```
+# Start the application with debugging workers
+NODE_DEBUG=workers NODE_ENV=stage node .
+```
+
+Following all the available parameters:
+
+- workers
+- server
+- n26-api
 
 ## Build with
 
