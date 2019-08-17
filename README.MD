@@ -28,28 +28,40 @@ Spin up your mongodb:
   mongod
 ```
 
-Start the application:
+### Starting the application
 
-```
+The easy way:
+
+```bash
 npm start
 ```
 
-There are several other ways to start the application, here some of them:
+If you want to select the environment:
 
-```
-# Start the application, setting the environment parameter (default stage)
+```bash
+# Start the application with environment parameter 'production'
 NODE_ENV=production node .
-NODE_ENV=stage node .
-
-# Start the application with debugging server
-NODE_DEBUG=server NODE_ENV=stage node .
-
-# Start the application with debugging workers
-NODE_DEBUG=workers NODE_ENV=stage node .
-
-
-api-n26
 ```
+
+Following all the available test evnvironments:
+
+- production
+- staging (default)
+- Test
+
+Here an example for triggering debugging logs:
+
+````bash
+# Start the application with debugging flag 'workers'
+NODE_DEBUG=workers NODE_ENV=stage node .
+````
+
+Following all the available debug flags:
+
+- workers
+- server
+- n26-api
+- transactions
 
 ## Usage
 
@@ -65,22 +77,6 @@ Run `npm test` to execute the unit and integration tests. It requires the follow
 - [Chai](http://chaijs.com).
 
 You can also run unit tests (`npm run test:unit`) or integration tests (`npm run test:integration`) separately
-
-## Debugging
-
-Here an example for triggering debugging:
-
-```
-# Start the application with debugging workers
-NODE_DEBUG=workers NODE_ENV=stage node .
-```
-
-Following all the available parameters:
-
-- workers
-- server
-- n26-api
-- transactions
 
 ## Build with
 
