@@ -80,6 +80,7 @@ Following all the available parameters:
 - workers
 - server
 - n26-api
+- transactions
 
 ## Build with
 
