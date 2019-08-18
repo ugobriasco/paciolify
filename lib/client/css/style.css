@@ -1,6 +1,37 @@
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+
 .balance-chart-container {
   position: relative;
   margin: auto;
   height: 80vh;
   width: 80vw;
+}
+
+.bg {
+  height: 100%;
+  background: url("/img/bg-landing.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.fading-card {
+  width: 100%;
+  background-color: rgba(255, 0, 0, 0);
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 0, 0, 0)
+  );
+}
+.vertical-center {
+  min-height: 90%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
 }
