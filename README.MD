@@ -4,6 +4,8 @@ Millennia families tend to have separate bank accounts instead of a common one. 
 
 This application aims to facilitate family accounting by aggregating data from each member's bank account, providing a simple way to manage and control shared budgets and expenses.
 
+![screenshot-landing](./lib/client/img/screenshot-landing.jpg)
+
 ## Getting Started
 
 ### Prerequisites
