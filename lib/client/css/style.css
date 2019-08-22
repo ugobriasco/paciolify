@@ -2,6 +2,7 @@ body,
 html {
   margin: 0;
   height: 100%;
+  background-color: #110f01;
 }
 
 .balance-chart-container {
@@ -9,7 +10,7 @@ html {
 }
 
 .bg {
-  height: 100%;
+  height: calc(100% - 10px);
   background: url("/img/bg-landing.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -34,5 +35,9 @@ html {
 }
 
 .card-body {
-  background-color: #000;
+  /* background-color: #000; */
+}
+
+.balance-sheet-container {
+  padding-top: 10%;
 }
