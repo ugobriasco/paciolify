@@ -10,7 +10,7 @@ html {
 }
 
 .bg {
-  height: calc(100% - 10px);
+  height: calc(100%);
   background: url("/img/bg-landing.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
