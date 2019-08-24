@@ -53,10 +53,10 @@ Following all the available test evnvironments:
 
 Here an example for triggering debugging logs:
 
-````bash
+```bash
 # Start the application with debugging flag 'workers'
 NODE_DEBUG=workers NODE_ENV=stage node .
-````
+```
 
 Following all the available debug flags:
 
@@ -64,6 +64,7 @@ Following all the available debug flags:
 - server
 - n26-api
 - transactions
+- client
 
 ## Usage
 
